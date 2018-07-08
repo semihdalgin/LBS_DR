@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	
+	<item android:id="@+id/mnuEmailnow" android:title="@string/menu_email_now" android:icon="@drawable/ic_menu_send" />
+	
+    <item android:id="@+id/mnuFloor" android:title="@string/menu_floorinfo" android:icon="@drawable/mnu_floor" android:showAsAction="always"/>
+    <item android:id="@+id/mnuZaman" android:title="@string/menu_zamaninfo" android:icon="@drawable/mnu_time" android:showAsAction="always"/>
+    <item android:id="@+id/mnuHeight" android:title="@string/menu_heightinfo" android:icon="@drawable/apart" android:showAsAction="always"/>
+    
+    <item android:id="@+id/mnuUpload" android:title="@string/menu_upload" android:icon="@drawable/ic_menu_upload" android:showAsAction="always">
+    
+    
+        <menu>
+            
+            <item android:id="@+id/mnuEmail" android:title="@string/email_upload"/>
+            
+            <item android:id="@+id/mnuFtp" android:title="@string/ftp_upload" />
+            <item android:id="@+id/mnuExport" android:title="@string/menu_export"/>
+            <item android:id="@+id/mnuDell" android:title="@string/menu_dell"/>
+            
+        </menu>
+    </item><item android:id="@+id/mnuSettings" android:title="@string/menu_settings" android:icon="@drawable/ic_menu_preferences" />
+
+    <item android:id="@+id/mnuExit" android:title="@string/menu_exit"
+          android:icon="@drawable/ic_menu_close_clear_cancel"/>
+    <item android:id="@+id/mnuFAQ" android:title="@string/menu_faq"
+          android:icon="@drawable/ic_menu_help" />
+
+</menu>

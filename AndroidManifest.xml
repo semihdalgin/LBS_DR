@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.mendhak.gpslogger" android:versionCode="36"
+          android:versionName="36" android:installLocation="auto">
+
+    <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="19"/>
+    
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.nfc" />
+
+    <supports-screens android:smallScreens="true"
+                      android:normalScreens="true" android:largeScreens="true"
+                      android:anyDensity="true"/>
+
+    <!--suppress AndroidDomInspection -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <application android:icon="@drawable/gpsloggericon2"
+                 android:name="@string/app_name" android:label="@string/app_name" android:theme="@style/Theme.Sherlock" android:allowBackup="true" >
+
+        <service android:name="com.mendhak.gpslogger.GpsLoggingService">
+            <intent-filter>
+                <action android:name="com.mendhak.gpslogger.GpsLoggingService"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.mendhak.gpslogger.GpsMainActivity"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask" android:configChanges="locale">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        
+        <activity android:name="com.mendhak.gpslogger.Faqtivity"
+                  android:label="@string/faq_screen_title"
+                  android:launchMode="singleTask">
+        </activity>
+        
+        
+
+        <activity
+                android:name="com.dropbox.client2.android.AuthActivity"
+                android:launchMode="singleTask"
+                android:configChanges="orientation|keyboard">
+            <intent-filter>
+                <!-- Change this to be db- followed by your app key -->
+                <data android:scheme="db-0unjsn38gpe3rwv"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        
+        <activity android:name="com.mendhak.gpslogger.GpsSettingsActivity"
+                  android:label="@string/settings_screen_name"
+                  android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.mendhak.gpslogger.senders.ftp.AutoFtpActivity"
+                  android:label="@string/autoftp_setup_title" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.mendhak.gpslogger.AUTOFTP_SETUP"/>
+            </intent-filter>
+        </activity><activity android:name="com.mendhak.gpslogger.senders.email.AutoEmailActivity"
+                  android:label="@string/autoemail_title" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.mendhak.gpslogger.AUTOEMAIL_SETUP"/>
+            </intent-filter>
+        </activity>
+        
+
+        
+        <activity android:name=".shortcuts.ShortcutCreate" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".shortcuts.ShortcutStart" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".shortcuts.ShortcutStop" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        
+
+        <receiver android:enabled="true"
+                  android:name="com.mendhak.gpslogger.StartupReceiver"
+                  android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </receiver>
+
+        <receiver android:name="com.mendhak.gpslogger.senders.AlarmReceiver"/>
+        
+        <provider
+       	android:name=".GPSDataContentProvider"
+        android:authorities="com.semih"
+        android:exported="true" />
+        <service android:name="ZamanServisi"></service>
+        <service android:name="BluetoothLeService" android:enabled="true"></service>
+             
+        
+    </application>
+
+
+</manifest> 
