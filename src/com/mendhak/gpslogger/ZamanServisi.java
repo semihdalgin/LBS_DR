@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2010-2015, Semih Dalgin. All Rights Reserved.
+ *
+ * Licensed under the ITU-TUBITAK
+ *
+ */
+
+
 package com.mendhak.gpslogger;
 
 import java.io.IOException;
@@ -166,7 +174,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 
 		final int ZAMAN = zamanmak;
 
-		// System.out.println("Süre= " + zamanmak);
+		// System.out.println("SÃ¼re= " + zamanmak);
 		
 
 
@@ -229,7 +237,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 		return null;
 	}
 
-	// Sýfýr Matris
+	// SÃ½fÃ½r Matris
 
 	public static double[][] zeros(int rows, int columns) {
 
@@ -256,7 +264,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 		return csi1;
 	}
 
-	// Matrisleri Gör
+	// Matrisleri GÃ¶r
 	public void printMatrix(double[][] m) {
 		try {
 			int rows = m.length;
@@ -272,7 +280,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				System.out.println("\n");
 			}
 		} catch (Exception e) {
-			System.out.println("Matris is boþ");
+			System.out.println("Matris is boss");
 		}
 	}
 
@@ -303,7 +311,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 
 			}
 		} catch (Exception e) {
-			System.out.println("Matris is boþ");
+			System.out.println("Matris is boss");
 		}
 
 		return c;
@@ -429,42 +437,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 	public void SensorEventLogger() {
 
 		ContentValues values = new ContentValues();
-		
 
-		/*System.out.println(zz1);
-		System.out.println(zz2);
-
-		System.out.println(zz3);
-
-		System.out.println(zz4);
-
-		System.out.println(zz5);
-
-		System.out.println(zz6);
-
-		System.out.println(zz7);
-
-		System.out.println(zz8);
-
-		System.out.println(zz9);
-
-		System.out.println(zz10);
-
-		System.out.println(zz11);
-
-		System.out.println(zz12);
-
-		System.out.println(zz13);
-
-		System.out.println(zz14);
-
-		System.out.println(zz15);
-
-		System.out.println(zz16);
-
-		System.out.println(zz17);
-
-		System.out.println(zz18); */
 
 		Date date = new Date();
 
@@ -473,7 +446,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String model = android.os.Build.MODEL;
 		String manufacturer = Build.MANUFACTURER;
-		String addressString = "Adres Bulunamadý";
+		String addressString = "Adres BulunamadÃ½";
 
 		final Calendar dds = Calendar.getInstance();
 		double days = dds.get(Calendar.DAY_OF_MONTH);
@@ -494,12 +467,6 @@ public class ZamanServisi extends Service implements SensorEventListener {
 		double ggs5 = saat + ggs4 + ggs3;
 		double ggs6 = ggs5 / 24;
 
-		/*
-		 * System.out.println("GUN 1="+ ggs1); System.out.println("GUN 1="+
-		 * ggs2); System.out.println("GUN 1="+ ggs3);
-		 * System.out.println("GUN 1="+ ggs4); System.out.println("GUN 5="+
-		 * ggs5); System.out.println("GUN 1="+ ggs6);
-		 */
 
 		aylar = ggs1 + ggs2 + ggs6;
 
@@ -549,8 +516,8 @@ public class ZamanServisi extends Service implements SensorEventListener {
 			double RR = 6371 * 1000;
 
 			/*
-			 * System.out.println("Süre= " + zamanmak);
-			 * System.out.println("Süre= " + zmanmak);
+			 * System.out.println("SÃ¼re= " + zamanmak);
+			 * System.out.println("SÃ¼re= " + zmanmak);
 			 * 
 			 * System.out.println("Lat Pre=" + LatPre);
 			 * System.out.println("Lat =" + Lat); System.out.println("Long Pre="
@@ -594,7 +561,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				double NNN[][] = new double[matris][2];
 
 				int j = 0;
-				// matrisleri oluþtur.
+				// matrisleri oluÃ¾tur.
 				for (int i = ekksatir; i < saykalman-3; i++) {
 					t[j][0] = db.getTime(i);
 					p[j][0] = db.getPressure(i);
@@ -606,7 +573,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				System.out.println("JJ==" + j);
 				System.out.println("Gun");
 				printMatrix(t);
-				System.out.println("Basýnç");
+				System.out.println("BasÃ½nÃ§");
 				printMatrix(p);
 				System.out.println("Prezisyon");
 				printMatrix(dp);
@@ -741,20 +708,6 @@ public class ZamanServisi extends Service implements SensorEventListener {
 					A[i][34] = zz13c;
 					A[i][35] = zz13s;
 					
-					//A[i][36] = zz14c;
-					//A[i][37] = zz14s;
-					
-					//A[i][38] = zz15c;
-					//A[i][39] = zz15s;
-					
-					//A[i][40] = zz16c;
-					//A[i][41] = zz16s;
-					
-					//A[i][42] = zz17c;
-					//A[i][43] = zz17s;
-					
-					//A[i][44] = zz18c;
-					//A[i][45] = zz18s; 
 										
 				}
 
@@ -786,18 +739,18 @@ public class ZamanServisi extends Service implements SensorEventListener {
 
 				System.out.println("NNN Transpozu");
 				printMatrix(NNN1);
-				System.out.println("NNN Transpozu ile NNN çarpýmý");
+				System.out.println("NNN Transpozu ile NNN Ã§arpÃ½mÃ½");
 				printMatrix(cNNN);
-				System.out.println("Çarpýmýn inversi");
+				System.out.println("Ã‡arpÃ½mÃ½n inversi");
 				printMatrix(c1NNN);
-				System.out.println("Tekrar çarpým");
+				System.out.println("Tekrar Ã§arpÃ½m");
 				printMatrix(c2NNN);
 				System.out.println("coef=");
 				System.out.println("coef1=" + cc1);
 				System.out.println("coef2=" + cc2);
 				printMatrix(c3);
 
-				// Lineer bileþen
+				// Lineer bileÃ¾en
 
 				double lin[][] = new double[matris][1];
 				int ikk = 0;
@@ -807,7 +760,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 					ikk = ikk + 1;
 				}
 
-				System.out.println("Lineer Bileþen=");
+				System.out.println("Lineer BileÃ¾en=");
 				printMatrix(lin);
 
 				// ll
@@ -822,7 +775,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				System.out.println("llllllllllllll matrisi=");
 				printMatrix(ll);
 
-				// Mevsimsel - Dönemsel Bileþen
+				// Mevsimsel - DÃ¶nemsel BileÃ¾en
 
 				double ATP[][] = transpose(A);
 				double n1[][] = multiply(ATP, PP);
@@ -894,7 +847,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				System.out.println("ck9:::"+ck9);
 				System.out.println("ck10:::"+ck10); */
 
-				System.out.println("Katsayýlar=");
+				System.out.println("KatsayÃ½lar=");
 				printMatrix(kats);
 
 				double fa = aylar;
@@ -989,13 +942,13 @@ public class ZamanServisi extends Service implements SensorEventListener {
 						
 						
 						
-		    System.out.println("**********************************Tahmin Basýnc Anaaa****************** \n " + Tahmin);
+		    System.out.println("**********************************Tahmin BasÃ½nc Anaaa****************** \n " + Tahmin);
 			 
 
 			// System.out.println("zaman say= "+ zsay);
 			double fb = pressure_value;
 
-			//System.out.println("Tahmin Basýnc= " + Tahmin);
+			//System.out.println("Tahmin BasÃ½nc= " + Tahmin);
 			// System.out.println("fb= "+fb);
 
 			double getgz = db.getGravity(zsay);
@@ -1008,7 +961,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 				if (mesafe > 250) {
 
 					floorresult = 500;
-				} // mesafe 150 den fazla mý?
+				} // mesafe 150 den fazla mÃ½?
 
 				else if (Tahmin > 0) {
 
@@ -1022,7 +975,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 
 					if (kat > 0.9 || kat < -0.9) {
 
-						if (kat > 0) { // aþaðý
+						if (kat > 0) { // aÃ¾aÃ°Ã½
 
 							// double getfloor=ffark/0.20;
 
@@ -1048,7 +1001,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 							}
 							girkontrol = 3;
 
-						} else { // yukarý katlar
+						} else { // yukarÃ½ katlar
 
 							// double getfloor=ffark/0.22;
 
@@ -1084,9 +1037,9 @@ public class ZamanServisi extends Service implements SensorEventListener {
 
 					} // sabit mi
 				  }
-				} // mesafe onayý
-			} // hareket onayý
-		} // veritabaný onayý
+				} // mesafe onayÃ½
+			} // hareket onayÃ½
+		} // veritabanÃ½ onayÃ½
 
 		veritabani=db.getDbCount()+1;
 		values.put(GPSData.GPSPoint.PRESSURE, pressure_value);
@@ -1117,7 +1070,7 @@ public class ZamanServisi extends Service implements SensorEventListener {
 		values.put(GPSData.GPSPoint.GY, gy);
 		values.put(GPSData.GPSPoint.GZ, gz);
 
-		// Katsayýlar
+		// KatsayÃ½lar
 
 		values.put(GPSData.GPSPoint.C1, cc1);
 		values.put(GPSData.GPSPoint.C2, cc2);
