@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2010-2015, Semih Dalgin. All Rights Reserved.
+ *
+ * Licensed under the ITU-TUBITAK
+ *
+ */
+
 package com.mendhak.gpslogger;
 
 import android.net.Uri;
